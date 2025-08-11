@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X, Code2, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,15 +60,24 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button variant="cta" size="sm" asChild>
-              <Link to="/subscribe">Start Learning</Link>
-            </Button>
+          {/* Theme Toggle and CTA Button */}
+          <div className="hidden md:flex items-center space-x-3">
+            <ThemeToggle />
+            <Link to="/subscribe">
+              <button className="relative overflow-hidden px-6 py-2 bg-gradient-to-r from-accent to-primary text-white font-semibold rounded-2xl transition-all duration-500 hover:rounded-full hover:scale-110 hover:shadow-glow group">
+                <span className="relative z-10 transition-all duration-300 group-hover:scale-110">Start Learning</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 rounded-2xl transition-all duration-300 group-hover:scale-110 group-hover:blur-sm opacity-70 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                <div className="absolute inset-0 rounded-2xl">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                </div>
+              </button>
+            </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile theme toggle and menu button */}
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
@@ -103,12 +113,21 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <div className="pt-4 border-t border-border">
-              <Button variant="cta" className="w-full" asChild>
-                <Link to="/subscribe" onClick={() => setIsOpen(false)}>
-                  Start Learning
-                </Link>
-              </Button>
+            <div className="pt-4 border-t border-border space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-medium text-foreground">Theme</span>
+                <ThemeToggle />
+              </div>
+              <Link to="/subscribe" onClick={() => setIsOpen(false)}>
+                <button className="relative overflow-hidden w-full px-6 py-2 bg-gradient-to-r from-accent to-primary text-white font-semibold rounded-2xl transition-all duration-500 hover:rounded-full hover:scale-110 hover:shadow-glow group">
+                  <span className="relative z-10 transition-all duration-300 group-hover:scale-110">Start Learning</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 rounded-2xl transition-all duration-300 group-hover:scale-110 group-hover:blur-sm opacity-70 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                  <div className="absolute inset-0 rounded-2xl">
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                  </div>
+                </button>
+              </Link>
             </div>
           </div>
         </motion.div>

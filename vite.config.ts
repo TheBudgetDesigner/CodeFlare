@@ -9,25 +9,34 @@ export default defineConfig({
   plugins: [
     react(),
     nodePolyfills({
+      // Enable polyfills for specific globals and modules
+      globals: {
+        Buffer: true,
+        global: true,
+        process: true,
+      },
       protocolImports: true,
     }),
   ],
   define: {
-    'process.env': {},
-    'global': 'globalThis',
+    global: 'globalThis',
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      buffer: 'buffer',
     },
   },
   optimizeDeps: {
+    include: ['buffer', 'react-router-dom'],
     esbuildOptions: {
+      // Node.js global to browser globalThis
+      define: {
+        global: 'globalThis',
+      },
       plugins: [
         NodeGlobalsPolyfillPlugin({
           buffer: true,
-          global: true,
+          process: true,
         }),
         NodeModulesPolyfillPlugin(),
       ],

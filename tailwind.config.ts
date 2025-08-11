@@ -53,13 +53,19 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Soft calming palette colors
-				'soft-blue': '#A8C6CF',
-				'pale-green': '#C7D9B9',
-				'light-gray': '#F5F7FA',
-				'off-white': '#FAF9F6',
-				'muted-lavender': '#B9AEDC',
-				'soft-peach': '#F4D6C1',
+				// Playful & earthy palette colors
+				'classic-blue': '#1E40AF',
+				'terracotta': '#D2691E',
+				'coral': '#FF6B6B',
+				'mint-green': '#10D9A3',
+				'warm-pink': '#E91E63',
+				'neutral-gray': '#F5F5F5',
+				// Pastel variations
+				'pastel-blue': '#87CEEB',
+				'pastel-pink': '#FFB6C1',
+				'pastel-green': '#98FB98',
+				'pastel-yellow': '#FFFFE0',
+				'pastel-purple': '#DDA0DD',
 				// CodeFlare themed colors
 				'tip-green': {
 					DEFAULT: 'hsl(var(--tip-green))',

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Code2 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/hero-bg.jpg';
 
@@ -104,30 +103,36 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
-            <Button 
-              variant="hero" 
-              size="hero" 
-              className="group" 
-              asChild
-            >
-              <Link to="/journey">
-                Start My Journey
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
+            <Link to="/journey">
+              <button className="relative overflow-hidden px-8 py-4 bg-gradient-to-r from-accent to-primary text-white font-semibold rounded-2xl transition-all duration-500 hover:rounded-full hover:scale-110 hover:shadow-glow group flex items-center gap-2">
+                <span className="relative z-10 transition-all duration-300 group-hover:scale-110">Start My Journey</span>
+                <ArrowRight className="w-5 h-5 relative z-10 group-hover:scale-110 transition-transform" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 rounded-2xl transition-all duration-300 group-hover:scale-110 group-hover:blur-sm opacity-70 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                <div className="absolute inset-0 rounded-2xl">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                </div>
+              </button>
+            </Link>
             
-            <Button 
-              variant="outline" 
-              size="hero" 
-              className="border-accent/20 hover:border-accent hover:bg-accent/10"
-              asChild
-            >
-              <Link to="/blog">
-                Read Stories
-              </Link>
-            </Button>
+            <Link to="/blog">
+              <button className="relative overflow-hidden px-8 py-4 bg-gradient-to-r from-accent to-primary text-white font-semibold rounded-2xl transition-all duration-500 hover:rounded-full hover:scale-110 hover:shadow-glow group">
+                <span className="relative z-10 transition-all duration-300 group-hover:scale-110">Read Stories</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 rounded-2xl transition-all duration-300 group-hover:scale-110 group-hover:blur-sm opacity-70 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                <div className="absolute inset-0 rounded-2xl">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                </div>
+              </button>
+            </Link>
+            
+            <Link to="/subscribe">
+              <button className="px-8 py-4 bg-gradient-to-r from-accent to-primary text-white font-semibold rounded-2xl transition-colors duration-300">
+                Subscribe Now
+              </button>
+            </Link>
           </motion.div>
 
           <motion.div

@@ -1,7 +1,6 @@
 import Layout from '@/components/layout/Layout';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Mail, Zap, BookOpen, TrendingUp, Users } from 'lucide-react';
@@ -138,14 +137,17 @@ const Subscribe = () => {
                           required
                         />
                       </div>
-                      <Button 
+                      <button 
                         type="submit" 
-                        variant="hero" 
-                        size="hero" 
-                        className="w-full"
+                        className="relative overflow-hidden w-full px-8 py-4 bg-gradient-to-r from-accent to-primary text-white font-semibold rounded-2xl transition-all duration-500 hover:rounded-full hover:scale-110 hover:shadow-glow group"
                       >
-                        Subscribe to CodeFlare
-                      </Button>
+                        <span className="relative z-10 transition-all duration-300 group-hover:scale-110">Subscribe to CodeFlare</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 rounded-2xl transition-all duration-300 group-hover:scale-110 group-hover:blur-sm opacity-70 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                        <div className="absolute inset-0 rounded-2xl">
+                          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                        </div>
+                      </button>
                     </form>
                     <p className="text-xs text-muted-foreground mt-4 text-center">
                       No spam, ever. Unsubscribe at any time. I respect your inbox as much as you do.

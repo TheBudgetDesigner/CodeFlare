@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen, TrendingUp, AlertTriangle, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { FloatingCard, GlassCard, TiltCard, NeonCard } from '@/components/ui/uiverse-cards';
 import { Link } from 'react-router-dom';
 
 const FeaturedContent = () => {
@@ -78,37 +79,39 @@ const FeaturedContent = () => {
           transition={{ staggerChildren: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {featuredCards.map((card, index) => (
-            <motion.div 
-              key={index} 
-              variants={cardVariants}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              <Card className="glass-card hover:scale-105 transition-all duration-300 group cursor-pointer">
+          {featuredCards.map((card, index) => {
+            return (
+              <motion.div 
+                key={index} 
+                variants={cardVariants}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
                 <Link to={card.link}>
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <div className={`p-2 rounded-lg bg-muted ${card.color}`}>
-                        <card.icon className="h-5 w-5" />
+                  <Card className="group cursor-pointer h-full bg-card border border-border transition-all duration-300 hover:bg-background/80 hover:backdrop-blur-lg hover:border-accent/20 hover:scale-105 hover:shadow-2xl">
+                    <CardHeader>
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className={`p-3 rounded-xl bg-muted ${card.color} group-hover:scale-110 transition-transform duration-300`}>
+                          <card.icon className="h-6 w-6" />
+                        </div>
                       </div>
-                    </div>
-                    <CardTitle className="text-lg group-hover:text-accent transition-colors">
-                      {card.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-sm leading-relaxed mb-4">
-                      {card.description}
-                    </CardDescription>
-                    <div className="flex items-center text-sm text-accent group-hover:translate-x-1 transition-transform">
-                      Explore
-                      <ArrowRight className="h-4 w-4 ml-1" />
-                    </div>
-                  </CardContent>
+                      <CardTitle className="text-xl font-bold group-hover:text-accent transition-colors duration-300">
+                        {card.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-muted-foreground text-sm leading-relaxed mb-4">
+                        {card.description}
+                      </CardDescription>
+                      <div className="flex items-center text-sm text-accent group-hover:translate-x-2 transition-all duration-300">
+                        <span className="font-medium">Explore</span>
+                        <ArrowRight className="h-4 w-4 ml-2 group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                    </CardContent>
+                  </Card>
                 </Link>
-              </Card>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

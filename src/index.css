@@ -6,61 +6,61 @@
 
 @layer base {
   :root {
-    /* Soft Calming Theme - Off-White Background (#FAF9F6) */
-    --background: 60 33% 98%; /* Off-White #FAF9F6 */
-    --foreground: 0 0% 20%; /* Dark charcoal #333333 for text */
+    /* Playful & Earthy Theme - Clean white background with colorful accents */
+    --background: 0 0% 100%; /* Pure white for clean base */
+    --foreground: 0 0% 9%; /* Rich black for text */
 
-    --card: 210 17% 98%; /* Light Gray #F5F7FA */
-    --card-foreground: 0 0% 20%;
+    --card: 0 0% 98%; /* Off-white for cards */
+    --card-foreground: 0 0% 9%;
 
-    --popover: 210 17% 98%; /* Light Gray #F5F7FA */
-    --popover-foreground: 0 0% 20%;
+    --popover: 0 0% 100%; /* White for popovers */
+    --popover-foreground: 0 0% 9%;
 
-    /* Primary - Soft Blue (#A8C6CF) */
-    --primary: 194 26% 74%; /* Soft Blue #A8C6CF */
-    --primary-foreground: 0 0% 20%;
-    --primary-glow: 194 26% 80%;
+    /* Primary - Classic Blue (#1E40AF) */
+    --primary: 219 83% 53%; /* Classic Blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 219 83% 60%;
 
-    /* Secondary - Muted Lavender (#B9AEDC) */
-    --secondary: 254 35% 74%; /* Muted Lavender #B9AEDC */
-    --secondary-foreground: 0 0% 20%;
+    /* Secondary - Earthy Terracotta (#D2691E) */
+    --secondary: 25 75% 47%; /* Terracotta/Earthy Orange */
+    --secondary-foreground: 0 0% 100%;
 
-    /* Muted tones */
-    --muted: 210 17% 95%; /* Light Gray variant */
+    /* Muted tones - Neutral grays */
+    --muted: 0 0% 96%; /* Light neutral gray */
     --muted-foreground: 0 0% 45%;
 
-    /* Accent - Pale Green (#C7D9B9) */
-    --accent: 90 24% 78%; /* Pale Green #C7D9B9 */
-    --accent-foreground: 0 0% 20%;
+    /* Accent - Playful Coral (#FF6B6B) */
+    --accent: 0 79% 70%; /* Bright coral for playful accents */
+    --accent-foreground: 0 0% 100%;
 
-    /* Tip Green - keeping the green but softer */
-    --tip-green: 90 24% 78%; /* Pale Green #C7D9B9 */
-    --tip-green-foreground: 0 0% 20%;
+    /* Tip Green - Fresh Mint (#10D9A3) */
+    --tip-green: 166 85% 57%; /* Bright mint green */
+    --tip-green-foreground: 0 0% 9%;
 
-    /* Flop Red - Soft Peach (#F4D6C1) */
-    --flop-red: 25 67% 85%; /* Soft Peach #F4D6C1 */
-    --flop-red-foreground: 0 0% 20%;
+    /* Flop Red - Warm Pink (#E91E63) */
+    --flop-red: 340 82% 52%; /* Bright warm pink */
+    --flop-red-foreground: 0 0% 100%;
 
-    --destructive: 25 67% 85%; /* Soft Peach for destructive actions */
-    --destructive-foreground: 0 0% 20%;
+    --destructive: 340 82% 52%; /* Warm pink for destructive actions */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 210 17% 90%;
-    --input: 210 17% 95%;
-    --ring: 194 26% 74%; /* Soft Blue for focus rings */
+    --border: 0 0% 90%; /* Light gray borders */
+    --input: 0 0% 97%; /* Light input backgrounds */
+    --ring: 219 83% 53%; /* Classic Blue for focus rings */
 
     --radius: 0.75rem;
 
-    /* Soft calming gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(194 26% 74%), hsl(254 35% 74%)); /* Soft Blue to Muted Lavender */
-    --gradient-secondary: linear-gradient(135deg, hsl(210 17% 95%), hsl(60 33% 98%)); /* Light Gray to Off-White */
-    --gradient-accent: linear-gradient(135deg, hsl(90 24% 78%), hsl(25 67% 85%)); /* Pale Green to Soft Peach */
-    --gradient-flop: linear-gradient(135deg, hsl(25 67% 85%), hsl(254 35% 74%)); /* Soft Peach to Muted Lavender */
+    /* Playful vibrant gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(219 83% 53%), hsl(166 85% 57%)); /* Classic Blue to Fresh Mint */
+    --gradient-secondary: linear-gradient(135deg, hsl(25 75% 47%), hsl(0 79% 70%)); /* Terracotta to Coral */
+    --gradient-accent: linear-gradient(135deg, hsl(0 79% 70%), hsl(340 82% 52%)); /* Coral to Warm Pink */
+    --gradient-flop: linear-gradient(135deg, hsl(340 82% 52%), hsl(25 75% 47%)); /* Warm Pink to Terracotta */
     
-    /* Soft subtle shadows */
-    --shadow-glow: 0 0 20px hsl(194 26% 74% / 0.2); /* Soft Blue glow */
-    --shadow-purple-glow: 0 0 20px hsl(254 35% 74% / 0.2); /* Muted Lavender glow */
-    --shadow-card: 0 4px 16px hsl(0 0% 0% / 0.08); /* Very subtle card shadow */
-    --shadow-elevated: 0 8px 32px hsl(0 0% 0% / 0.12); /* Gentle elevated shadow */
+    /* Vibrant but balanced shadows */
+    --shadow-glow: 0 0 20px hsl(219 83% 53% / 0.2); /* Classic Blue glow */
+    --shadow-purple-glow: 0 0 20px hsl(340 82% 52% / 0.2); /* Warm Pink glow */
+    --shadow-card: 0 2px 12px hsl(0 0% 0% / 0.05); /* Clean subtle card shadow */
+    --shadow-elevated: 0 4px 24px hsl(0 0% 0% / 0.1); /* Clean elevated shadow */
 
     /* Typography - CodeFlare fonts */
     --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
@@ -92,39 +92,88 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* Light mode overrides (when toggled) - Same soft palette */
+  /* Light mode overrides (when toggled) - Same playful palette */
   .light {
-    --background: 60 33% 98%; /* Off-White #FAF9F6 */
-    --foreground: 0 0% 20%; /* Dark charcoal #333333 */
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 0 0% 9%; /* Rich black */
 
-    --card: 210 17% 98%; /* Light Gray #F5F7FA */
-    --card-foreground: 0 0% 20%;
+    --card: 0 0% 98%; /* Off-white for cards */
+    --card-foreground: 0 0% 9%;
 
-    --popover: 210 17% 98%; /* Light Gray #F5F7FA */
-    --popover-foreground: 0 0% 20%;
+    --popover: 0 0% 100%; /* White for popovers */
+    --popover-foreground: 0 0% 9%;
 
-    --primary: 194 26% 74%; /* Soft Blue #A8C6CF */
-    --primary-foreground: 0 0% 20%;
+    --primary: 219 83% 53%; /* Classic Blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 219 83% 60%;
 
-    --secondary: 254 35% 74%; /* Muted Lavender #B9AEDC */
-    --secondary-foreground: 0 0% 20%;
+    --secondary: 25 75% 47%; /* Terracotta/Earthy Orange */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 17% 95%; /* Light Gray variant */
+    --muted: 0 0% 96%; /* Light neutral gray */
     --muted-foreground: 0 0% 45%;
 
-    --accent: 90 24% 78%; /* Pale Green #C7D9B9 */
-    --accent-foreground: 0 0% 20%;
+    --accent: 0 79% 70%; /* Bright coral */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 25 67% 85%; /* Soft Peach #F4D6C1 */
-    --destructive-foreground: 0 0% 20%;
+    --tip-green: 166 85% 57%; /* Bright mint green */
+    --tip-green-foreground: 0 0% 9%;
 
-    --border: 210 17% 90%;
-    --input: 210 17% 95%;
-    --ring: 194 26% 74%; /* Soft Blue for focus rings */
+    --flop-red: 340 82% 52%; /* Bright warm pink */
+    --flop-red-foreground: 0 0% 100%;
 
-    --shadow-glow: 0 0 20px hsl(194 26% 74% / 0.2);
-    --shadow-card: 0 4px 16px hsl(0 0% 0% / 0.08);
-    --shadow-elevated: 0 8px 32px hsl(0 0% 0% / 0.12);
+    --destructive: 340 82% 52%; /* Warm pink */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%; /* Light gray borders */
+    --input: 0 0% 97%; /* Light input backgrounds */
+    --ring: 219 83% 53%; /* Classic Blue for focus rings */
+
+    --shadow-glow: 0 0 20px hsl(219 83% 53% / 0.2);
+    --shadow-card: 0 2px 12px hsl(0 0% 0% / 0.05);
+    --shadow-elevated: 0 4px 24px hsl(0 0% 0% / 0.1);
+  }
+
+  /* Dark mode - Rich dark theme with vibrant accents */
+  .dark {
+    --background: 0 0% 12%; /* Deep dark background */
+    --foreground: 0 0% 85%; /* Light text */
+
+    --card: 0 0% 18%; /* Dark cards */
+    --card-foreground: 0 0% 85%;
+
+    --popover: 0 0% 18%; /* Dark popovers */
+    --popover-foreground: 0 0% 85%;
+
+    --primary: 219 83% 35%; /* Darker Classic Blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 219 83% 40%;
+
+    --secondary: 25 75% 33%; /* Darker Terracotta */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 25%; /* Dark muted */
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 79% 55%; /* Darker Coral */
+    --accent-foreground: 0 0% 100%;
+
+    --tip-green: 166 85% 35%; /* Darker Mint Green */
+    --tip-green-foreground: 0 0% 100%;
+
+    --flop-red: 340 82% 38%; /* Darker Warm Pink */
+    --flop-red-foreground: 0 0% 100%;
+
+    --destructive: 340 82% 38%; /* Darker Warm Pink */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 30%; /* Dark borders */
+    --input: 0 0% 20%; /* Dark inputs */
+    --ring: 219 83% 35%; /* Darker Blue for focus rings */
+
+    --shadow-glow: 0 0 20px hsl(219 83% 35% / 0.3);
+    --shadow-card: 0 2px 12px hsl(0 0% 0% / 0.2);
+    --shadow-elevated: 0 4px 24px hsl(0 0% 0% / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

@@ -6,61 +6,61 @@
 
 @layer base {
   :root {
-    /* CodeFlare Theme - Jet Black Background (#0A0A0A) */
-    --background: 0 0% 4%;
-    --foreground: 220 13% 91%;
+    /* Soft Calming Theme - Off-White Background (#FAF9F6) */
+    --background: 60 33% 98%; /* Off-White #FAF9F6 */
+    --foreground: 0 0% 20%; /* Dark charcoal #333333 for text */
 
-    --card: 0 0% 6%;
-    --card-foreground: 220 13% 91%;
+    --card: 210 17% 98%; /* Light Gray #F5F7FA */
+    --card-foreground: 0 0% 20%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 220 13% 91%;
+    --popover: 210 17% 98%; /* Light Gray #F5F7FA */
+    --popover-foreground: 0 0% 20%;
 
-    /* Primary - Purple (#7C3AED) */
-    --primary: 262 83% 58%;
-    --primary-foreground: 220 13% 91%;
-    --primary-glow: 262 83% 65%;
+    /* Primary - Soft Blue (#A8C6CF) */
+    --primary: 194 26% 74%; /* Soft Blue #A8C6CF */
+    --primary-foreground: 0 0% 20%;
+    --primary-glow: 194 26% 80%;
 
-    /* Secondary - Dark grays */
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 220 13% 91%;
+    /* Secondary - Muted Lavender (#B9AEDC) */
+    --secondary: 254 35% 74%; /* Muted Lavender #B9AEDC */
+    --secondary-foreground: 0 0% 20%;
 
     /* Muted tones */
-    --muted: 0 0% 8%;
-    --muted-foreground: 220 13% 65%;
+    --muted: 210 17% 95%; /* Light Gray variant */
+    --muted-foreground: 0 0% 45%;
 
-    /* Accent - Neon Blue (#38BDF8) */
-    --accent: 199 89% 48%;
-    --accent-foreground: 0 0% 4%;
+    /* Accent - Pale Green (#C7D9B9) */
+    --accent: 90 24% 78%; /* Pale Green #C7D9B9 */
+    --accent-foreground: 0 0% 20%;
 
-    /* Tip Green (#10B981) */
-    --tip-green: 158 64% 52%;
-    --tip-green-foreground: 0 0% 4%;
+    /* Tip Green - keeping the green but softer */
+    --tip-green: 90 24% 78%; /* Pale Green #C7D9B9 */
+    --tip-green-foreground: 0 0% 20%;
 
-    /* Flop Red (#F87171) */
-    --flop-red: 0 84% 60%;
-    --flop-red-foreground: 220 13% 91%;
+    /* Flop Red - Soft Peach (#F4D6C1) */
+    --flop-red: 25 67% 85%; /* Soft Peach #F4D6C1 */
+    --flop-red-foreground: 0 0% 20%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 220 13% 91%;
+    --destructive: 25 67% 85%; /* Soft Peach for destructive actions */
+    --destructive-foreground: 0 0% 20%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 262 83% 58%;
+    --border: 210 17% 90%;
+    --input: 210 17% 95%;
+    --ring: 194 26% 74%; /* Soft Blue for focus rings */
 
     --radius: 0.75rem;
 
-    /* Futuristic gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(199 89% 48%));
-    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 15%));
-    --gradient-accent: linear-gradient(135deg, hsl(199 89% 48%), hsl(158 64% 52%));
-    --gradient-flop: linear-gradient(135deg, hsl(0 84% 60%), hsl(262 83% 58%));
+    /* Soft calming gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(194 26% 74%), hsl(254 35% 74%)); /* Soft Blue to Muted Lavender */
+    --gradient-secondary: linear-gradient(135deg, hsl(210 17% 95%), hsl(60 33% 98%)); /* Light Gray to Off-White */
+    --gradient-accent: linear-gradient(135deg, hsl(90 24% 78%), hsl(25 67% 85%)); /* Pale Green to Soft Peach */
+    --gradient-flop: linear-gradient(135deg, hsl(25 67% 85%), hsl(254 35% 74%)); /* Soft Peach to Muted Lavender */
     
-    /* Neon glow shadows */
-    --shadow-glow: 0 0 40px hsl(199 89% 48% / 0.3);
-    --shadow-purple-glow: 0 0 40px hsl(262 83% 58% / 0.3);
-    --shadow-card: 0 8px 32px hsl(0 0% 4% / 0.5);
-    --shadow-elevated: 0 16px 64px hsl(0 0% 4% / 0.7);
+    /* Soft subtle shadows */
+    --shadow-glow: 0 0 20px hsl(194 26% 74% / 0.2); /* Soft Blue glow */
+    --shadow-purple-glow: 0 0 20px hsl(254 35% 74% / 0.2); /* Muted Lavender glow */
+    --shadow-card: 0 4px 16px hsl(0 0% 0% / 0.08); /* Very subtle card shadow */
+    --shadow-elevated: 0 8px 32px hsl(0 0% 0% / 0.12); /* Gentle elevated shadow */
 
     /* Typography - CodeFlare fonts */
     --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
@@ -92,39 +92,39 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* Light mode overrides (when toggled) */
+  /* Light mode overrides (when toggled) - Same soft palette */
   .light {
-    --background: 220 9% 98%;
-    --foreground: 220 13% 18%;
+    --background: 60 33% 98%; /* Off-White #FAF9F6 */
+    --foreground: 0 0% 20%; /* Dark charcoal #333333 */
 
-    --card: 220 9% 98%;
-    --card-foreground: 220 13% 18%;
+    --card: 210 17% 98%; /* Light Gray #F5F7FA */
+    --card-foreground: 0 0% 20%;
 
-    --popover: 220 9% 98%;
-    --popover-foreground: 220 13% 18%;
+    --popover: 210 17% 98%; /* Light Gray #F5F7FA */
+    --popover-foreground: 0 0% 20%;
 
-    --primary: 260 70% 55%;
-    --primary-foreground: 220 9% 98%;
+    --primary: 194 26% 74%; /* Soft Blue #A8C6CF */
+    --primary-foreground: 0 0% 20%;
 
-    --secondary: 220 9% 95%;
-    --secondary-foreground: 220 13% 18%;
+    --secondary: 254 35% 74%; /* Muted Lavender #B9AEDC */
+    --secondary-foreground: 0 0% 20%;
 
-    --muted: 220 9% 96%;
-    --muted-foreground: 220 9% 45%;
+    --muted: 210 17% 95%; /* Light Gray variant */
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 180 100% 50%;
-    --accent-foreground: 220 9% 98%;
+    --accent: 90 24% 78%; /* Pale Green #C7D9B9 */
+    --accent-foreground: 0 0% 20%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 220 9% 98%;
+    --destructive: 25 67% 85%; /* Soft Peach #F4D6C1 */
+    --destructive-foreground: 0 0% 20%;
 
-    --border: 220 9% 90%;
-    --input: 220 9% 95%;
-    --ring: 260 70% 55%;
+    --border: 210 17% 90%;
+    --input: 210 17% 95%;
+    --ring: 194 26% 74%; /* Soft Blue for focus rings */
 
-    --shadow-glow: 0 0 40px hsl(260 70% 55% / 0.2);
-    --shadow-card: 0 8px 32px hsl(220 13% 50% / 0.1);
-    --shadow-elevated: 0 16px 64px hsl(220 13% 50% / 0.15);
+    --shadow-glow: 0 0 20px hsl(194 26% 74% / 0.2);
+    --shadow-card: 0 4px 16px hsl(0 0% 0% / 0.08);
+    --shadow-elevated: 0 8px 32px hsl(0 0% 0% / 0.12);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

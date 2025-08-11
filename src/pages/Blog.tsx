@@ -4,50 +4,46 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getAllPosts, BlogPost as BlogPostType } from '@/lib/blog';
 
 const Blog = () => {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "How I Built My First AI Bot (And Why It Failed Spectacularly)",
-      description: "The complete story of my Discord bot project - from exciting idea to crashing reality, and what I learned from the wreckage.",
-      date: "2025-01-15",
-      readTime: "5 min read",
-      category: "AI",
-      slug: "first-ai-bot-failure",
-      featured: true,
-    },
-    {
-      id: 2,
-      title: "10 Beginner Mistakes I Made (So You Don't Have To)",
-      description: "From forgetting semicolons to not reading error messages - here are the silly mistakes that taught me the most.",
-      date: "2025-01-10",
-      readTime: "3 min read",
-      category: "Learning",
-      slug: "beginner-mistakes",
-      featured: false,
-    },
-    {
-      id: 3,
-      title: "Why I Code at 12 (And Why Age Doesn't Matter)",
-      description: "Addressing the 'you're too young' comments and why starting early gave me a unique perspective on learning.",
-      date: "2025-01-05",
-      readTime: "4 min read",
-      category: "Personal",
-      slug: "coding-at-twelve",
-      featured: false,
-    },
-    {
-      id: 4,
-      title: "ChatGPT: My Coding Mentor That Never Gets Tired",
-      description: "How AI changed my learning process and became the patient teacher I always needed.",
-      date: "2024-12-28",
-      readTime: "6 min read",
-      category: "AI",
-      slug: "chatgpt-coding-mentor",
-      featured: false,
-    },
-  ];
+  const [blogPosts, setBlogPosts] = useState<BlogPostType[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        const posts = await getAllPosts();
+        setBlogPosts(posts);
+      } catch (error) {
+        console.error('Error loading blog posts:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadPosts();
+  }, []);
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="pt-20 pb-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h1 className="text-4xl sm:text-5xl font-bold mb-6">
+                <span className="gradient-text">Blog</span> Posts
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Loading posts...
+              </p>
+            </div>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>
@@ -70,7 +66,7 @@ const Blog = () => {
           {/* Featured Post */}
           {blogPosts.filter(post => post.featured).map((post, index) => (
             <motion.div
-              key={post.id}
+              key={post.slug}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -98,7 +94,7 @@ const Blog = () => {
                         {post.title}
                       </CardTitle>
                       <CardDescription className="text-base text-muted-foreground leading-relaxed">
-                        {post.description}
+                        {post.content.replace(/<[^>]*>/g, '').substring(0, 200)}...
                       </CardDescription>
                     </CardHeader>
                     <Link
@@ -118,7 +114,7 @@ const Blog = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.filter(post => !post.featured).map((post, index) => (
               <motion.div
-                key={post.id}
+                key={post.slug}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
@@ -138,7 +134,7 @@ const Blog = () => {
                         {post.title}
                       </CardTitle>
                       <CardDescription className="line-clamp-3">
-                        {post.description}
+                        {post.content.replace(/<[^>]*>/g, '').substring(0, 150)}...
                       </CardDescription>
                     </CardHeader>
                     <CardContent>

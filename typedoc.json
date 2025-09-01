@@ -1,0 +1,37 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "name": "CodeFlare AI Journey Documentation",
+  "entryPoints": ["./src"],
+  "entryPointStrategy": "expand",
+  "out": "./docs",
+  "theme": "default",
+  "includeVersion": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeExternals": true,
+  "readme": "./README.md",
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "**/vite-env.d.ts"
+  ],
+  "plugin": [],
+  "tsconfig": "./tsconfig.app.json",
+  "skipErrorChecking": true,
+  "sort": ["source-order"],
+  "categorizeByGroup": true,
+  "categoryOrder": [
+    "Components",
+    "Hooks",
+    "Utils",
+    "Types",
+    "*"
+  ],
+  "gitRevision": "main",
+  "hideGenerator": false,
+  "searchInComments": true,
+  "cleanOutputDir": true
+}

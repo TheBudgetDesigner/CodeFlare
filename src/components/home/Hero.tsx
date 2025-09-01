@@ -1,9 +1,31 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Code2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getAllPosts, BlogPost } from '@/lib/blog';
 import heroImage from '@/assets/hero-bg.jpg';
 
 const Hero = () => {
+  const [latestPost, setLatestPost] = useState<BlogPost | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchLatestPost = async () => {
+      try {
+        const posts = await getAllPosts();
+        if (posts.length > 0) {
+          setLatestPost(posts[0]); // First post is the latest due to sorting in getAllPosts
+        }
+      } catch (error) {
+        console.error('Error fetching latest post:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchLatestPost();
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
@@ -129,8 +151,13 @@ const Hero = () => {
             </Link>
             
             <Link to="/subscribe">
-              <button className="px-8 py-4 bg-gradient-to-r from-accent to-primary text-white font-semibold rounded-2xl transition-colors duration-300">
-                Subscribe Now
+              <button className="relative overflow-hidden px-8 py-4 bg-gradient-to-r from-accent to-primary text-white font-semibold rounded-2xl transition-all duration-500 hover:rounded-full hover:scale-110 hover:shadow-glow group">
+                <span className="relative z-10 transition-all duration-300 group-hover:scale-110">Subscribe Now</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 rounded-2xl transition-all duration-300 group-hover:scale-110 group-hover:blur-sm opacity-70 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                <div className="absolute inset-0 rounded-2xl">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                </div>
               </button>
             </Link>
           </motion.div>

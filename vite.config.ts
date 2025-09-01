@@ -42,4 +42,10 @@ export default defineConfig({
       ],
     },
   },
+  server: {
+    host: true, // allows access from network / tunnels
+    port: 5173,
+    strictPort: true,
+    allowedHosts: ['.ngrok-free.app'],
+  },
 });
